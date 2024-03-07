@@ -41,14 +41,8 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
-    uniqueID: 1845769919
-    locked: 0
-  - name: Midground
-    uniqueID: 3245730563
-    locked: 0
-  - name: Foreground
-    uniqueID: 1455969039
+  - name: Minigame
+    uniqueID: 1257285297
     locked: 0
   - name: UI
     uniqueID: 2883224409
