@@ -33,7 +33,7 @@ public class StatBar : MonoBehaviour
     // Value.
     //------------------------------------------------------------------------------------------------------------------
 
-    public void ChangeValueBy(int valueDelta)
+    public void ChangeValueBy(int valueDelta,  bool displayPopup = true)
     {
         int oldValue = _currentValue;
         int newValue = Mathf.Clamp(_currentValue + valueDelta, 1, _maximumValue);
@@ -41,6 +41,8 @@ public class StatBar : MonoBehaviour
         CheckValueChange(oldValue, newValue);
         
         _currentValue = newValue;
+        
+        if (displayPopup) _popup.Display(newValue - oldValue);
         
         UpdateUI();
     }

@@ -159,21 +159,29 @@ namespace Gameplay
         private void OnEatButtonClicked()
         {
             if (_gameplayState == GameplayState.Minigame) return;
+            
+            _hungerBar.ChangeValueBy(1);
         }
         
         private void OnPoopButtonClicked()
         {
             if (_gameplayState == GameplayState.Minigame) return;
+            
+            _hungerBar.ChangeValueBy(-1);
         }
 
         private void OnDrinkButtonClicked()
         {
             if (_gameplayState == GameplayState.Minigame) return;
+            
+            _thirstBar.ChangeValueBy(1);
         }
 
         private void OnPeeButtonClicked()
         {
             if (_gameplayState == GameplayState.Minigame) return;
+            
+            _thirstBar.ChangeValueBy(-1);
         }
 
         private void OnZoomButtonClicked()
@@ -193,6 +201,8 @@ namespace Gameplay
         private void OnSleepButtonClicked()
         {
             if (_gameplayState == GameplayState.Minigame) return;
+            
+            _boredomBar.ChangeValueBy(-1);
         }
         
         #endregion
