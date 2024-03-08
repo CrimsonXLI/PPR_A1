@@ -41,6 +41,9 @@ namespace Zoomies
         private void OnEnable()
         {
             _lineRenderer.positionCount = 2;
+            
+            _progress = 0;
+            _progressBar.SetProgress(_progress);
         }
 
         private void Update()

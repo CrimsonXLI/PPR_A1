@@ -29,6 +29,9 @@ namespace Gameplay
         [Header("Minigames")]
         [SerializeField] private ZoomiesMinigame _zoomiesMinigame;
         
+        [Header("Popup")]
+        [SerializeField] private PopupSystem _popupSystem;
+        
         private GameplayState _gameplayState;
         
         private enum GameplayState
@@ -92,6 +95,8 @@ namespace Gameplay
             Debug.Log("Hunger Emptied.");
             
             _hungerStatusText.text = "Starving!";
+            
+            _popupSystem.Display("Your cat has not eaten enough food and is now starving!");
         }
         
         private void OnHungerOK()
@@ -106,6 +111,8 @@ namespace Gameplay
             Debug.Log("Hunger Filled.");
             
             _hungerStatusText.text = "Full!";
+            
+            _popupSystem.Display("Your cat has eaten way too much food and is now overweight!");
         }
 
         private void OnThirstEmptied()
@@ -113,6 +120,8 @@ namespace Gameplay
             Debug.Log("Thirst Emptied.");
             
             _thirstStatusText.text = "Dehydrated!";
+            
+            _popupSystem.Display("Your cat has not drunk enough water and is now dehydrated!");
         }
         
         private void OnThirstOK()
@@ -127,6 +136,8 @@ namespace Gameplay
             Debug.Log("Thirst Filled.");
             
             _thirstStatusText.text = "Hydrated!";
+            
+            _popupSystem.Display("Your cat has drunk way too much water and is now bloated!");
         }
 
         private void OnBoredomEmptied()
@@ -134,6 +145,8 @@ namespace Gameplay
             Debug.Log("Boredom Emptied.");
             
             _boredomStatusText.text = "Bored!";
+            
+            _popupSystem.Display("Your cat is SUPER bored and needs some entertainment!");
         }
         
         private void OnBoredomOK()
@@ -148,6 +161,8 @@ namespace Gameplay
             Debug.Log("Boredom Filled.");
             
             _boredomStatusText.text = "Entertained!";
+            
+            _popupSystem.Display("Your cat has had WAY too much excitement and is now hyperactive!");
         }
         
         #endregion
